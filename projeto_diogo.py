@@ -24,9 +24,15 @@ def deletar(nome):
     else:
         print(f"Nome '{nome}' não encontrado.")
 
+def pesquisar(nome):
+    if nome in nomes:
+        print(f"Nome '{nome}' encontrado!")
+    else:
+        print(f"Nome '{nome}' não encontrado.")
+
 if __name__ == "__main__":
     while True:
-        print("\nOperações: criar, listar, atualizar, deletar, sair")
+        print("\nOperações: criar, listar, atualizar, deletar, pesquisar, sair")
         operacao = input("Escolha uma operação: ").strip().lower()
 
         if operacao == "criar":
@@ -41,6 +47,9 @@ if __name__ == "__main__":
         elif operacao == "deletar":
             nome = input("Nome para remover: ")
             deletar(nome)
+        elif operacao == "pesquisar":
+            nome = input("Digite o nome para buscar: ")
+            pesquisar(nome)
         elif operacao == "sair":
             break
         else:
